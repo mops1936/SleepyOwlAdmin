@@ -1,3 +1,4 @@
 <div {!! $width !!}>
-  {!! Form::select('', $options, $default, $attributesArray) !!}
+    {{ html()->select('', $options, $default)->attributes($attributesArray) }}
+{{--  {!! Form::select('', $options, $default, $attributesArray) !!}--}}
 </div>

@@ -8,7 +8,8 @@
     </label>
 
     <div>
-        {!! Form::select($name, collect($options)->pluck('text', 'id'), $value, $attributes_array) !!}
+        {{ html()->select($name, collect($options)->pluck('text', 'id'), $value)->attributes($attributes_array) }}
+{{--        {!! Form::select($name, collect($options)->pluck('text', 'id'), $value, $attributes_array) !!}--}}
     </div>
 
     @include(AdminTemplate::getViewPath('form.element.partials.helptext'))

@@ -10,7 +10,8 @@
     </div>
 </div>
 <env_editor :data="{{ json_encode($data) }}" :error-text="'{{ trans('sleeping_owl::validation.access_denied') }}'" inline-template>
-    {{ Form::open(['method' => 'POST', 'url' => route('admin.env.editor.post')]) }}
+    {{ html()->form('POST', route('admin.env.editor.post'))->open() }}
+{{--    {{ Form::open(['method' => 'POST', 'url' => route('admin.env.editor.post')]) }}--}}
     <div class="links-row"></div>
     <div class="card card-default">
         <div class="card-heading">
@@ -74,7 +75,8 @@
             </div>
         </div>
     </div>
-    {{ Form::close() }}
+    {{ html()->form()->close() }}
+{{--    {{ Form::close() }}--}}
 </env_editor>
 <div class="row">
     <div class="col-md-8">
